@@ -15,11 +15,14 @@ def all_parties():
     result = None
     if request.method == 'POST':
         try:
+            # TODO: create a party
             result = create_party(request)
         except CannotPartyAloneError:
+            # TODO: return 400
             abort(400)
 
     elif request.method == 'GET':
+        # TODO: get all the parties
         result = get_all_parties()
 
     return result
